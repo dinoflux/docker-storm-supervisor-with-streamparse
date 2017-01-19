@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-ENVS_PATH=~/topologies
+ENVS_PATH=/topologies
 REQUIREMENTS_SOURCE=/env_specs
 
 setup_virt_env() {
@@ -9,7 +9,8 @@ setup_virt_env() {
    cd $env_name
    source bin/activate
    cp $REQUIREMENTS_SOURCE/$env_name.txt requirements.txt
-   pip install -q -r requirements.txt
+   pip install -r requirements.txt
+   rm requirements.txt
    echo $env_name
 }
 
