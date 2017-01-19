@@ -41,4 +41,5 @@ RUN chmod +x /sync-venv.sh
 
 VOLUME ["/topologies"]
 VOLUME ["/env_specs"]
+VOLUME ["/stream_parse_logs"]
 ENTRYPOINT ["/docker-entrypoint.sh"]
