@@ -35,6 +35,10 @@ WORKDIR apache-storm-$STORM_VERSION
 
 ENV PATH $PATH:/apache-storm-$STORM_VERSION/bin
 COPY docker-entrypoint.sh /
+COPY sync_venv.sh /
 RUN chmod +x /docker-entrypoint.sh
+RUN chmod +x /sync_venv.sh
+
 VOLUME ["/topologies"]
+VOLUME ["/env_specs"]
 ENTRYPOINT ["/docker-entrypoint.sh"]
